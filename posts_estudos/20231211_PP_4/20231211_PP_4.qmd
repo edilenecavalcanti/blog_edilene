@@ -1,0 +1,14 @@
+---
+title: "Carta da Indústria"
+date: "2023-12-11"
+categories: [news]
+image: carta2018.JPG
+
+sidebar: false
+---
+
+Demandas do setor industrial para os candidatos ao executivo e legislativo de 2018.
+
+<https://cartaindustria.fiesc.com.br/carta-industria.pdf>
+
+I'm not sure if it's relevant.

@@ -1,0 +1,30 @@
+---
+title: "Rotas Estratégicas Setoriais"
+date: "2023-12-11"
+categories: [news]
+image: rotas.jpeg
+
+sidebar: false
+---
+
+Indústria Criativa
+
+Turismo
+
+Celulose & Papel
+
+Meio Ambiente
+
+Agroalimentar
+
+Bens de Capital
+
+Energia
+
+Têxtil & Confecção
+
+Indústrias Emergentes
+
+Produtos Químicos & Plásticos
+
+Construção Civil

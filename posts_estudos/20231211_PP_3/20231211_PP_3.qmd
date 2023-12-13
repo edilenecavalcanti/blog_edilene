@@ -1,0 +1,8 @@
+---
+title: "Santa Catarina em Dados"
+date: "2023-12-11"
+categories: [news]
+image: scemdados2017.JPG
+
+sidebar: false
+---

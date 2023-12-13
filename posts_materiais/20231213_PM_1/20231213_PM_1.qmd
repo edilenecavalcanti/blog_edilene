@@ -1,0 +1,6 @@
+---
+title: "post materiais"
+author: "Tristan O'Malley"
+date: "2023-12-05"
+categories: [news]
+---

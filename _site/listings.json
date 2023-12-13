@@ -1,0 +1,62 @@
+[
+  {
+    "listing": "/visualizacao.html",
+    "items": [
+      "/posts_visualizacao/20231211_PV_1/20231211_PV_1.html"
+    ]
+  },
+  {
+    "listing": "/manipulacao.html",
+    "items": [
+      "/posts_manipulacao/20231211_PM_1/20231211_PM_1.html"
+    ]
+  },
+  {
+    "listing": "/extracao.html",
+    "items": [
+      "/posts_extracao/20231211_PE_1/20231211_PE_1.html"
+    ]
+  },
+  {
+    "listing": "/anotacoes.html",
+    "items": [
+      "/posts_anotacoes/20231211_PA_1/20231211_PA_1.html"
+    ]
+  },
+  {
+    "listing": "/estatistica.html",
+    "items": [
+      "/posts_estatistica/20231211_PEs_1/20231211_PEs_1.html"
+    ]
+  },
+  {
+    "listing": "/publications.html",
+    "items": [
+      "/posts_publications/20231211_PP_1/20231211_PP_1.html",
+      "/posts_publications/20231211_PP_2/20231211_PP_2.html",
+      "/posts_publications/20231211_PP_3/20231211_PP_3.html",
+      "/posts_publications/20231211_PP_4/20231211_PP_4.html",
+      "/posts_publications/20231211_PP_5/20231211_PP_5.html"
+    ]
+  },
+  {
+    "listing": "/materiais.html",
+    "items": []
+  },
+  {
+    "listing": "/posts.html",
+    "items": [
+      "/posts/20231213_PP_1/20231213_PP_1.html"
+    ]
+  },
+  {
+    "listing": "/estudos.html",
+    "items": [
+      "/posts_estudos/20231211_PP_1/20231211_PP_1.html",
+      "/posts_estudos/20231211_PP_2/20231211_PP_2.html",
+      "/posts_estudos/20231211_PP_3/20231211_PP_3.html",
+      "/posts_estudos/20231211_PP_4/20231211_PP_4.html",
+      "/posts_estudos/20231211_PP_5/20231211_PP_5.html"
+    ]
+  }
+]

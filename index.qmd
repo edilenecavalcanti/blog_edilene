@@ -1,0 +1,77 @@
+---
+title: "Edilene Cavalcanti"
+image: profile.jpeg
+about:
+  template: trestles
+  links:
+    - icon: github
+      text: Github
+      href: https://github.com
+    - icon: github
+      text: Lattes
+      href: "http://lattes.cnpq.br/1521966851450232"
+
+format:
+  html:
+    toc: true
+
+sidebar: false
+---
+
+## Bio
+
+Hi, everyone! Me chamo Edilene e me formei em Economia em 2013. Desde então, trabalho com dados. Tenho conhecimento nos processos de extração, manipulação, carregamento, visualização e análise de dados.
+
+Utilizo o Rstudio, Pyhton, SQL, Power BI e Qlik Sense nesses processos para trabalhar com diversas fontes de dados disponíveis no Brasil:
+
+| Banco Central do Brasil (BACEN)
+| Cadastro Geral de Empregados e Desempregados (CAGED)
+| Comércio Exterior (COMEX STAT - MDIC)
+| Instituto Brasileiro de Geografia e Estatística (IBGE)
+| Relação Anual de Informações Sociais (RAIS)
+
+Meu objetivo é aprender mais sobre todos esses processos. Atualmente, estou finalizando um curso de Especialização em Ciência de Dados para Economia e Finanças e estou iniciando uma Pós-Graduação no curso de Ciência de Dados e Big Data.
+
+## Education
+
+[Postgraduate in Data Science and Big Data, 2024 - currently]{.underline}
+
+Pontífica Universidade Católica de Minas Gerais, Minas Gerais, Brazil
+
+[Doctorate in Engineering, Management, and Knowledge Media, 2021 - currently]{.underline}
+
+Federal University of Santa Catarina, Santa Catarina, Brazil
+
+[Master's in Engineering, Management, and Knowledge Media, 2019]{.underline}
+
+Federal University of Santa Catarina, Santa Catarina, Brazil
+
+[Bachelor's degree in Economics, 2013]{.underline}
+
+Federal University of Santa Catarina, Santa Catarina, Brazil
+
+## Experience
+
+**Researcher (fev-21, (**
+
+Serviço Brasileiro de Apoio às Micro e Pequenas Empresas, Santa Catarina, Brazil
+
+-   Working...
+
+**Analyst** (fev-19 - jan/20)
+
+Federação das Indústrias de Santa Catarina, Santa Catarina, Brazil
+
+-   Working
+
+**Researcher (jan/14 - jan/18)**
+
+Federação das Indústrias de Santa Catarina, Santa Catarina, Brazil
+
+-   Working....
+
+## Key research interests
+
+-   Machine learning
+
+-   Linguagens de programação: Python e RStudio

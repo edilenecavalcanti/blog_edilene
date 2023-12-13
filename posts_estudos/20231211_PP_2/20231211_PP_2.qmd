@@ -1,0 +1,14 @@
+---
+title: "Acate Tech Report 2019 | Santa Catarina Technology Sector"
+date: "2023-12-11"
+categories: [news]
+image: techreport2019.JPG
+
+sidebar: false
+---
+
+Estudo que apresenta o panorama do setor de tecnologia em Santa Catarina.
+
+Quantidade de colaboradores, empregos gerados, sócios, produtividade e faturamento.
+
+Acesse o site <https://www.techreportsc.com/> ou leia o estudo completo: [Tech Report 2021](https://drive.google.com/u/2/uc?id=12fQBcNEhmnJuv8SItufMunre0RekYMuO&export=download).
