@@ -5,21 +5,20 @@ website:
   title: "Edilene Cavalcanti"
   navbar:
     right:
-      - sidebar:portfolio
       - text: "Posts"
         file: posts.qmd
       - text: "Materiais"
         file: materiais.qmd
-      - text: "Anotações"
-        file: anotacoes.qmd
+      - sidebar:publicacoes
+      - text: Currículo
+        href: https://drive.google.com/file/d/12qjE68pUX9p1O7Bn6zTuSur2i2DIWcNp/view?usp=sharing
       - icon: github
-        href: https://github.com/
-      - icon: twitter
-        href: https://twitter.com
+        href: https://github.com/edilenecavalcanti
+
         
   sidebar:
-    - id: portfolio
-      title: "Portfólio"
+    - id: publicacoes
+      title: "Publicações"
       style: "docked"
       background: light
       collapse-level: 2
@@ -32,7 +31,8 @@ website:
         
 format:
   html:
-    theme: pulse
+    theme: 
+      light: pulse
     css: styles.css
     toc: true
 

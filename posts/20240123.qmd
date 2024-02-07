@@ -1,0 +1,173 @@
+---
+title: "Gráficos usando o Highcharter"
+author: "Edilene Cavalcanti"
+date: "2024-01-23"
+categories: [Visualização]
+listing: 
+  contents: "20240123.qmd"
+execute: 
+  warning: false
+sidebar: false
+bibliography: bibliography.bib
+---
+
+Tutorial de como criar gráficos interativos utilizando o pacote `highcharter`. Utilizaremos como base a tabela 2722 - obtida na pesquisa Demografia das Empresas e Estatísticas de Empreendedorismo - uma pesquisa do IBGE, e obtidos por meio do pacote `sidrar`.
+
+Pacotes necessários:
+
+```{r echo=TRUE}
+library(highcharter)
+library(sidrar)
+library(tidyverse)
+```
+
+Importando a variável 'número de unidades locais (unidades)':
+
+```{r echo=TRUE}
+empresas <- sidrar::get_sidra(
+  x = 2722,
+  period = c("2015", "2016", "2017", "2018", "2019", "2020", "2021"),
+  variable = 706,
+  geo = "State",
+  geo.filter = list(State = "42")
+)
+
+```
+
+Etapa para limpeza da base:
+
+```{r echo=TRUE}
+# excluindo a linha 'total' e as linhas com 'NA'
+empresas_limpo <- empresas |> 
+  dplyr::filter(`Classificação Nacional de Atividades Econômicas (CNAE 2.0)` != "Total") |> 
+  na.omit()
+```
+
+```{r echo=FALSE}
+# conferindo o total de unidades locais em Santa Catarina em 2021
+empresas_2021 <- empresas_limpo |> 
+  dplyr::filter(Ano == "2021")
+
+# sum(empresas_2021$Valor)
+
+```
+
+Gráfico de colunas:
+
+```{r}
+
+dados_resumo <- aggregate(Valor ~ Ano, data = empresas_limpo, sum)
+
+# Crie o gráfico de barras empilhadas usando highcharter
+highchart() %>%
+  hc_chart(type = "column") %>%
+  hc_title(text = "<b>Unidades Locais<b>", align = "left") %>%
+  hc_subtitle(text = "Santa Catarina", align = "left") %>%
+  hc_xAxis(categories = dados_resumo$Ano, showEmpty = FALSE) %>%
+  hc_yAxis(
+    title = list(text = ""),
+    gridLineWidth = 0  # Remover linhas de grade do eixo y
+  ) %>%
+  hc_add_series(
+    name = "Unidades Locais",
+    data = dados_resumo$Valor,
+    color = 'purple',
+    dataLabels = list(
+      enabled = TRUE,
+      format = '{point.y:,.0f}'
+    )
+  )|> 
+  hc_legend(enabled= FALSE) |> 
+  hc_caption(text= "Fonte: Elaboração própria a partir dos dados do IBGE.", align = "right")
+```
+
+Gráfico de linhas
+
+```{r}
+dados_resumo <- aggregate(Valor ~ Ano, data = empresas_limpo, sum)
+
+# Crie o gráfico de barras empilhadas usando highcharter
+highchart() %>%
+  hc_chart(type = "line") %>%
+  hc_title(text = "<b>Unidades Locais<b>", align = "left") %>%
+  hc_subtitle(text = "Santa Catarina", align = "left") %>%
+  hc_xAxis(categories = dados_resumo$Ano, showEmpty = FALSE) %>%
+  hc_yAxis(
+    title = list(text = ""),
+    gridLineWidth = 0  # Remover linhas de grade do eixo y
+  ) %>%
+  hc_add_series(
+    name = "Unidades Locais",
+    data = dados_resumo$Valor,
+    color = 'darkgreen',
+    dataLabels = list(
+      enabled = TRUE,
+      format = '{point.y:,.0f}'
+    )
+  )|> 
+  hc_legend(enabled= FALSE) |> 
+  hc_caption(text= "Fonte: Elaboração própria a partir dos dados do IBGE", align = "right")
+```
+
+Exemplo de gráfico de linhas com categorias:
+
+```{r}
+tibble <- tibble::tibble(
+  Ano = c(2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024),
+  `Santa Catarina` = c(75, 82, 52, 8, 17, 9, 57, 80, 81, 66),
+  `Minas Gerais` = c(84, 86, 20, 55, 62, 18, 32, 98, 34, 34),
+  `Paraíba` = c(74, 46, 74, 98, 100, 4, 21, 75, 70, 72)
+)
+```
+
+```{r}
+highchart() %>%
+  hc_chart(type = "line") %>%
+  hc_title(text = "Exemplo de gráfico com categorias", align = "left") %>%
+  hc_subtitle(
+    text = 'By Job Category. Fonte: <a href="https://irecusa.org/programs/solar-jobs-census/" target="_blank">IREC</a>.',
+    align = 'left'
+  ) %>%
+  hc_yAxis(title = list(text = 'Pessoas Ocupadas')) %>%
+  hc_xAxis(
+    categories = tibble$Ano,
+    accessibility = list(rangeDescription = 'Range: 2015 to 2024')
+  ) %>%
+  hc_legend(
+    layout = 'vertical',
+    align = 'right',
+    verticalAlign = 'middle'
+  ) %>%
+  hc_plotOptions(
+    series = list(
+      label = list(connectorAllowed = FALSE),
+      pointStart = 2015
+    )
+  ) %>%
+  hc_series(
+    list(
+      name = 'Santa Catarina',
+      data = tibble$`Santa Catarina`
+    ),
+    list(
+      name = 'Minas Gerais',
+      data = tibble$`Minas Gerais`
+    ),
+    list(
+      name = 'Paraíba',
+      data = tibble$`Paraíba`
+    )
+  ) %>%
+  hc_responsive(
+    list(
+      condition = list(maxWidth = 500),
+      chartOptions = list(
+        legend = list(
+          layout = 'horizontal',
+          align = 'center',
+          verticalAlign = 'bottom'
+        )
+      )
+    )
+  )
+```

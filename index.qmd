@@ -4,11 +4,11 @@ image: profile.jpeg
 about:
   template: trestles
   links:
-    - icon: github
-      text: Github
-      href: https://github.com
-    - icon: github
-      text: Lattes
+    - icon: envelope
+      text: E-mail
+      href: "mailto:edilenecavalcantidosanjos@gmail.com"
+    - icon: book
+      text: Currículo Lattes
       href: "http://lattes.cnpq.br/1521966851450232"
 
 format:
@@ -18,60 +18,36 @@ format:
 sidebar: false
 ---
 
-## Bio
+Sou bacharel em Ciências Econômicas e trabalho com a extração, manipulação, visualização e análise de dados. Minha trajetória profissional começou na Federação das Indústrias de Santa Catarina (FIESC) - onde atuei como pesquisadora na área de economia entre 2014 e 2018, contribuindo para a execução do Programa de Desenvolvimento da Indústria Catarinense (PDIC 2022). Em 2019 - na mesma instituição, passei a ocupar o cargo de Analista de Inteligência Industrial, participando da construção do Observatório da Indústria Catarinense. De 2022 a 2024, participei da execução de dois projetos no âmbito do Observatório de Negócios do Serviço Brasileiro de Apoio às Micro e Pequenas Empresas de Santa Catarina (SEBRAE/SC). Atualmente sou sócia e pesquisadora na [Caravela Dados e Estatísticas](https://www.caravela.info/). Além disso, tenho Mestrado em Engenharia e Gestão do Conhecimento (pela UFSC) e estou finalizando o Doutorado na mesma área e instituição.
 
-Hi, everyone! Me chamo Edilene e me formei em Economia em 2013. Desde então, trabalho com dados. Tenho conhecimento nos processos de extração, manipulação, carregamento, visualização e análise de dados.
+## Formação
 
-Utilizo o Rstudio, Pyhton, SQL, Power BI e Qlik Sense nesses processos para trabalhar com diversas fontes de dados disponíveis no Brasil:
+[Ciência de Dados e Big Data, 2024 - atual]{.underline}
 
-| Banco Central do Brasil (BACEN)
-| Cadastro Geral de Empregados e Desempregados (CAGED)
-| Comércio Exterior (COMEX STAT - MDIC)
-| Instituto Brasileiro de Geografia e Estatística (IBGE)
-| Relação Anual de Informações Sociais (RAIS)
+Pontífica Universidade Católica de Minas Gerais, Minas Gerais, Brasil
 
-Meu objetivo é aprender mais sobre todos esses processos. Atualmente, estou finalizando um curso de Especialização em Ciência de Dados para Economia e Finanças e estou iniciando uma Pós-Graduação no curso de Ciência de Dados e Big Data.
+[Especialização em Ciência de Dados para Economia e Finanças, 2023 - atual]{.underline}
 
-## Education
+Análise Macro, Rio de Janeiro, Brasil
 
-[Postgraduate in Data Science and Big Data, 2024 - currently]{.underline}
+[Doutorado em Engenharia, Mídia e Gestão do Conhecimento, 2021 - atual]{.underline}
 
-Pontífica Universidade Católica de Minas Gerais, Minas Gerais, Brazil
+Universidade Federal de Santa Catarina, Santa Catarina, Brasil
 
-[Doctorate in Engineering, Management, and Knowledge Media, 2021 - currently]{.underline}
+[Mestrado em Engenharia e Gestão do Conhecimento, 2019]{.underline}
 
-Federal University of Santa Catarina, Santa Catarina, Brazil
+Universidade Federal de Santa Catarina, Santa Catarina, Brasil
 
-[Master's in Engineering, Management, and Knowledge Media, 2019]{.underline}
+[Bacharelado em Economia, 2013]{.underline}
 
-Federal University of Santa Catarina, Santa Catarina, Brazil
+Universidade Federal de Santa Catarina, Santa Catarina, Brasil
 
-[Bachelor's degree in Economics, 2013]{.underline}
+## Áreas de interesse
 
-Federal University of Santa Catarina, Santa Catarina, Brazil
-
-## Experience
-
-**Researcher (fev-21, (**
-
-Serviço Brasileiro de Apoio às Micro e Pequenas Empresas, Santa Catarina, Brazil
-
--   Working...
-
-**Analyst** (fev-19 - jan/20)
-
-Federação das Indústrias de Santa Catarina, Santa Catarina, Brazil
-
--   Working
-
-**Researcher (jan/14 - jan/18)**
-
-Federação das Indústrias de Santa Catarina, Santa Catarina, Brazil
-
--   Working....
-
-## Key research interests
+-   Ciência e análise de dados
 
 -   Machine learning
 
--   Linguagens de programação: Python e RStudio
+-   Linguagens de programação: Python e R Studio
+
+-   Estatística

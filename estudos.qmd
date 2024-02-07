@@ -2,7 +2,7 @@
 listing:
   contents: posts_estudos
   sort: "date desc"
-  type: default
+  type: grid
   categories: false
   sort-ui: false
   filter-ui: false

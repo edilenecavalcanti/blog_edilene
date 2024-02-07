@@ -1,0 +1,106 @@
+---
+title: "Aprendendo SQL"
+author: "Edilene Cavalcanti"
+draft: true
+date: "2024-02-02"
+categories: [Extração]
+listing: 
+  contents: "20240202.qmd"
+execute: 
+  warning: false
+sidebar: false
+bibliography: bibliography.bib
+---
+
+**Conceito**: SQL significa structured query language. É um método utilizado para extrair dados de um banco de dados.
+
+### Comandos básicos: 
+
+Para **selecionar** dados:
+
+-   SELECT FROM
+
+-   SELECT LIMIT
+
+-   SELECT AS
+
+-   ORDER BY
+
+O objetivo do comando SELECT\* é seleconar todas as colunas e linhas de uma tabela. Script:
+
+| `SELECT*`
+| `FROM nome_tabela;`
+
+Caso o objetivo seja selecionar apenas algumas colunas, deve-se aplicar o comando:
+
+| `SELECT Col1, Col2`
+| `FROM nome_tabela;`
+
+Caso o objetivo seja importar somente determinadas colunas e atribuir novos nomes a elas, deve-se aplicar o comando:
+
+| `SELECT`
+| `Col1 AS "novo_nome",` 
+| `Col2 AS "novo_nome"`
+| `FROM nome_tabela;`
+
+Caso o objetivo seja selecionar apenas um conjunto de linhas - duas, por exemplo, deve-se utilizar o comando `SELECT LIMIT`.
+
+| `SELECT`
+| `Col1 AS "novo_nome",`
+| `Col2 AS "novo_nome"`
+| `FROM nome_tabela`
+| `LIMIT 2;`
+
+Caso o objetivo seja extrair uma tabela ordenando os valores de determinada coluna - pela coluna três, por exemplo, deve-se utilizar o comando `ORDER BY.` Nesse caso, os valores serão ordenados de forma crescente.
+
+| SELECT 
+| \*
+| FROM Tabela
+| ORDER BY Col3;
+
+Para que a ordenação seja decrescente, utiliza-se o comando:
+
+| `SELECT`
+| `*`
+| `FROM Tabela`
+| `ORDER BY Col3 DESC;`
+
+Para **filtrar** dados:
+
+O principal comando é o WHERE (onde, em português). Ele se aplica, por exemplo, quando quero filtrar apenas observações que atendam algum critérios. É possível aplicar filtros com três tipos de informação: números, textos e datas.
+
+Caso o objetivo seja filtrar apenas produtos com preços iguais ou maiores que R\$ 1.800, deve-se aplicar o seguinte comando:
+
+| `SELECT`
+| `*`
+| `FROM produtos`
+| `WHERE Preco_Unitario >= 1800;`
+
+Caso a observação esteja no formato character, basta utilizar aspas simples.
+
+| `SELECT`
+| `*`
+| `FROM produtos`
+| `WHERE name = 'Maria';`
+
+Funções de agregação: COUNT/COUNT\*/DISTINCT/SUM/AVG/MAX/MIN
+
+COUNT: retorna a quantidade de valores de uma coluna. Para obter essa quantidade, deve-se aplicar o seguinte comando:
+
+| `SELECTCOUNT(Categoria) AS "contagem" FROM categorias;`
+
+Característica dessa função: ela ignora observações nulas. Ou seja, se tem uma tabela com NAs, a contagem será apenas dos elementos que não forem NA.
+
+COUNT\*: conta a quantidade de linhas de uma tabela. Não ignora valores nulos.
+
+COUNT(DISTINCT): retorna a contagem distinta de valores de uma tabela.
+
+Funções de agregação: GROUP BY
+
+Caso eu queira fazer um agrupamento da quantidade de clientes por gênero, o código é este:
+
+| `SELECT`
+| `Sexo,`
+| `COUNT(Nome) AS 'Qnt. Clientes'`
+| `FROM clientes`
+| `GROUP BY Sexo;`

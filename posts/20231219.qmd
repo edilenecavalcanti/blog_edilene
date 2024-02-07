@@ -1,0 +1,527 @@
+---
+title: "Análise exploratória da quantidade de MEIs no Brasil"
+author: "Edilene Cavalcanti"
+date: "2023-12-19"
+categories: [Estatística]
+listing: 
+  contents: "20231219.qmd"
+execute: 
+  warning: false
+
+sidebar: false
+bibliography: bibliography.bib
+---
+
+O objetivo deste relatório é analisar as medidas de posição (média, mediana e quartis) dos dados de MEIs no Brasil em 2021.
+
+Para extração, manipulação e visualização dos dados, utilizaremos os seguintes pacotes:
+
+```{r pacotes, echo=TRUE}
+if(!require(sidrar)){install.packages("sidrar")};library(sidrar) # extração
+if(!require(dplyr)){install.packages("dplyr")};library(dplyr) # manipulação
+if(!require(highcharter)){install.packages("highcharter")};library(highcharter) # visualização
+if(!require(echarts4r)){install.packages("echarts4r")};library(echarts4r) # visualização
+if(!require(gt)){install.packages("gt")};library(gt) # visualização
+```
+
+Os dados utilizados são da pesquisa 'Estatística dos Cadastros de Microempreendedores Individuais - divulgada pelo @ibge2021. Analisaremos a variável 'número de microempreendedores individuais (MEIs) (Unidades)', disponível na Tabela 9590.
+
+```{r dados, echo=TRUE}
+# extração da tabela 9590, do IBGE, via sidrar
+dados_mei <- sidrar::get_sidra(
+  api = paste0("/t/9590/n3/all/v/8862/p/last%201/c956/59983/",
+    "c1719/71430/c1760/60187/c1724/60096/c1726/60099"
+))
+```
+
+A quantidade de MEIs no Brasil está distribuída entre as Unidades da Federação (UFs). Podemos observar essa distribuição por meio de um mapa - elaborado a partir do pacote `highcharter`.
+
+```{r}
+# download do mapa do Brasil, por UF, via highcharter
+mapa_br <- highcharter::get_data_from_map(
+  download_map_data("countries/br/br-all")
+)
+
+dplyr::glimpse(mapa_br)
+```
+
+Para construir o mapa, é necessário unir a base de dados com a camada do mapa a partir de uma variável em comum entre ambas - que é o nome da UF. Observe que, na camada do mapa (mapa_br), o nome da UF é representada pela variável "name".
+
+```{r}
+# união da base de dados e da camada do mapa. 
+meis_uf_br <- dplyr::left_join(
+  x = mapa_br, 
+  y = dados_mei, 
+  by = c("name" = "Unidade da Federação")
+)
+```
+
+Construindo o mapa:
+
+```{r}
+#| label: fig-mapa
+#| fig-cap: "Mapa"
+
+hcmap("countries/br/br-all", data = meis_uf_br, value = "Valor",
+      joinBy = c("hc-a2", "postal-code"), name= "Quantidade",
+      dataLabels = list(enabled = TRUE, format = '{point.code}'),
+      tooltip = list(valueDecimals = 0)) %>%
+  hc_title(text = "Quantidade de MEIs por UF em 2021") %>%
+  hc_colorAxis(dataClasses = color_classes(c(seq(20000, 4000000, by = 600000)))) %>% 
+  hc_legend(layout = "vertical", align = "left", valueDecimals = 0)
+
+```
+
+Ao observar o mapa, nota-se que os MEIs concentram-se principalmente nas regiões sudeste e sul, com destaque para São Paulo, que lidera como o estado brasileiro com o maior número de MEIs.
+
+## Análise exploratória dos dados
+
+Para essa etapa, serão calculadas as medidas de posição: média, mediana e quartis.
+
+De acordo com a pesquisa, o total de MEIs no Brasil, em 2021, era de 13.194.470.
+
+```{r}
+sum(dados_mei$Valor)
+```
+
+O histograma mostra que treze UFs possuem até 200 mil MEIs e que somente uma UF tem entre 3,4 e 3,6 milhões de MEIs.
+
+```{r echo=FALSE}
+#| label: fig-2
+#| fig-cap: "Histograma da Quantidade de MEIs no Brasil em 2021"
+
+options(scipen = 999)
+hc <- 
+  hchart(
+  dados_mei$Valor, 
+  color = "#B71C1C", name = "Quantidade de MEIs"
+  ) %>% 
+  hc_title(text = "Histograma da Quantidade de MEIs no BR em 2021") %>%
+  hc_yAxis(title = list(text = "Qnt. de UFs"))
+
+hc
+```
+
+Pelas medidas de posição e pelo cálculo do intervalo interquartil *(IIQ = Q~3~ - Q~1~)*, apresentados abaixo, temos que:
+
+```{r}
+summary(dados_mei$Valor)
+
+
+(IQR(dados_mei$Valor))
+```
+
+-   O estado que possui a menor quantidade de MEIs (valor mínimo da amostra) é Roraima, com 21.196 MEIs.
+
+-   25% dos estados brasileiros possuem até 116.638 MEIs (1st Qu.).
+
+-   A mediana indica que metade dos estados brasileiros possuem até 230 mil e outra metade possui mais de 230 mil. A mediana equivale ao 2st Qu.
+
+-   Em média, há 488 mil MEIs por estado brasileiro.
+
+-   75% estados brasileiros possuem até 514 mil MEIs (3st Qu.).
+
+-   O estado que possui a maior quantidade de MEIs (valor máximo da amostra) é São Paulo, com 3.586.574 MEIs.
+
+-   IIQ = 397.771.
+
+O boxplot da quantidade de MEIs representa essas medidas e indica que os dados são assimétricos à direita (ou dados com assimetria positiva - em que a média é maior que a mediana).
+
+Ou seja, a maioria das UFs tem menos MEIs, mas algumas UFs se destacam com uma quantidade consideravelmente maior. Essa situação também pode ser observada pelo histograma (Figura 2).
+
+```{r echo=FALSE}
+#| label: fig-3
+#| fig-cap: "Boxplot da quantidade de MEIs no Brasil em 2021"
+
+dados_mei %>%
+  e_charts() %>%
+  e_boxplot(Valor, 
+            name = "População", 
+            outliers = TRUE, 
+            outlierLabel = list(show = TRUE),
+            formatter = htmlwidgets::JS("function(value) { return Intl.NumberFormat('pt-BR').format(value); }")) %>%
+  e_flip_coords() |>
+  e_x_axis(show = TRUE) %>%
+  e_tooltip()
+```
+
+Além disso, o boxplot destaca a presença de três valores extremos (outliers), representados pelos estados de São Paulo (3,5 mi), do Rio de Janeiro (1,5 mi) e de Minas Gerais (1,5 mi).
+
+Esses outliers influenciam consideravemente a média da quantidade de MEIs no Brasil, que é de 488 mil. Portanto, a média dos dados não se configura como uma medida confiável de posição - neste caso, uma vez que valores extremamente altos estão distorcendo significativamente a média.
+
+A mediana surge, então, como uma alternativa mais indicada. A mediana é menos sensível a valores extremos, já que se baseia no valor central quando os dados estão ordenados e desconsidera as distorções causadas pelos outliers presentes na distribuição.
+
+Como alternativa para analisar o comportamento dos dados, vamos considerar a distribuição da quantidade de MEIs entre as cinco regiões do Brasil (Centro-Oeste, Nordeste, Norte, Sudeste e Sul).
+
+### MEIs nas regiões brasileiras
+
+A região sudeste concentra pouco mais da metade (52,3%) da quantidade de MEIs no país - apesar de possuir apenas quatro estados. Os três outliers presentes nos dados estão nessa região (São Paulo, Rio de Janeiro e Minas Gerais).
+
+```{r echo=FALSE}
+library(googlesheets4) 
+googlesheets4::gs4_deauth() # desabilitando a autenticação do Google
+
+meis_regiao <- read_sheet(
+  paste0(
+    "https://docs.google.com/spreadsheets/", 
+    "d/1ixPM5C8kVZvXedxVwuhGilkPsklAEPN0EyfyCMCIHOw/edit?usp=sharing"))
+```
+
+```{r echo=FALSE}
+tab1 <- meis_regiao %>%
+  group_by(Região) %>%
+  summarize(
+    Valor = sum(Valor), 
+    porcentagem = round((Valor/sum(meis_regiao$Valor)) * 100, 1)
+  ) %>%
+  arrange(desc(porcentagem)) %>% 
+  add_row(
+    Região = "Total", 
+    Valor = sum(meis_regiao$Valor), 
+    porcentagem = 100
+  ) %>%
+   gt::gt()
+```
+
+```{r echo=FALSE}
+tab1 |> 
+  gt::tab_header(
+    title = gt::html("<b>Frequências e porcentagens da quantidade de MEIs no Brasil por região</b>"),
+  ) |> 
+  gt::tab_source_note(
+    gt::html("<b>Fonte</b>: Estatísticas dos Cadastros de Empreendedores Individuais - IBGE, 2021.")
+  ) |> 
+  gt::cols_label(
+    Valor = "Qnt. de MEIs", 
+    Região = "Região", 
+    porcentagem = "Porcentagem"
+  )
+```
+
+A seguir, apresentamos os histogramas e os boxplots das cinco regiões.
+
+::: panel-tabset
+## Centro-Oeste
+
+```{r echo=FALSE}
+centro_oeste <- meis_regiao %>% 
+  dplyr::filter(Região == "Centro-Oeste")
+
+options(scipen = 999)
+hchart(
+  centro_oeste$Valor, 
+  color = "#B71C1C", name = "Quantidade de MEIs"
+  ) %>% 
+  hc_title(text = "Histograma da Qnt. de MEIs na Região Centro-Oeste") %>%
+  hc_yAxis(title = list(text = "Qnt. de UFs"))
+```
+
+## Nordeste
+
+```{r echo=FALSE}
+nordeste <- meis_regiao %>% 
+  dplyr::filter(Região == "Nordeste")
+
+options(scipen = 999)
+hchart(
+  nordeste$Valor, 
+  color = "#B71C1C", name = "Quantidade de MEIs"
+  ) %>% 
+  hc_title(text = "Histograma da Qnt. de MEIs na Região Nordeste") %>%
+  hc_yAxis(title = list(text = "Qnt. de UFs"))
+```
+
+## Norte
+
+```{r echo=FALSE}
+norte <- meis_regiao %>% 
+  dplyr::filter(Região == "Norte")
+
+options(scipen = 999)
+hchart(
+  norte$Valor, 
+  color = "#B71C1C", name = "Quantidade de MEIs"
+  ) %>% 
+  hc_title(text = "Histograma da Qnt. de MEIs na Região Norte") %>%
+  hc_yAxis(title = list(text = "Qnt. de UFs"))
+```
+
+## Sudeste
+
+```{r echo=FALSE}
+sudeste <- meis_regiao %>% 
+  dplyr::filter(Região == "Sudeste")
+
+options(scipen = 999)
+hchart(
+  sudeste$Valor, 
+  color = "#B71C1C", name = "Quantidade de MEIs"
+  ) %>% 
+  hc_title(text = "Histograma da Qnt. de MEIs na Região Sudeste") %>%
+  hc_yAxis(title = list(text = "Qnt. de UFs"))
+```
+
+## Sul
+
+```{r echo=FALSE}
+sul <- meis_regiao %>% 
+  dplyr::filter(Região == "Sul")
+
+options(scipen = 999)
+hchart(
+  sul$Valor, 
+  color = "#B71C1C", name = "Quantidade de MEIs"
+  ) %>% 
+  hc_title(text = "Histograma da Qnt. de MEIs na Região Sul") %>%
+  hc_yAxis(title = list(text = "Qnt. de UFs"))
+```
+:::
+
+::: panel-tabset
+## Todas as regiões
+
+```{r echo=FALSE}
+
+myboxplotData <- data_to_boxplot(
+  meis_regiao,
+  Valor,
+  Região,
+  group_var = Região,
+  add_outliers = TRUE
+)
+
+highchart()%>%
+  hc_xAxis(type ="category")%>%
+  hc_add_series_list(myboxplotData)%>%
+  hc_xAxis(title = list(text = "Região"))%>%
+        hc_yAxis(title = list(text = "Qnt. de MEIs"))%>%
+        hc_title(text= "Boxplot da Quantidade de MEIs") %>% 
+        hc_subtitle(text= "regiões brasileiras") %>% 
+        hc_caption(text= "Fonte: Estatística dos Cadastros de Microempreendedores Individuais - IBGE, 2021.")%>% 
+        hc_legend(enabled= FALSE)
+```
+
+## Centro-Oeste
+
+```{r echo=FALSE}
+myboxplotData_centro_oeste <- data_to_boxplot(
+  centro_oeste,
+  Valor,
+  Região,
+  add_outliers = TRUE
+)
+
+highchart()%>%
+  hc_xAxis(type ="category")%>%
+  hc_add_series_list(myboxplotData_centro_oeste)%>%
+  hc_xAxis(title = list(text = "Região"))%>%
+        hc_yAxis(title = list(text = "Qnt. de MEIs"))%>%
+        hc_caption(text= "Fonte: Estatística dos Cadastros de Microempreendedores Individuais - IBGE, 2021.")%>% 
+        hc_legend(enabled= FALSE)
+```
+
+## Nordeste
+
+```{r echo=FALSE}
+myboxplotData_nordeste<- data_to_boxplot(
+  nordeste,
+  Valor,
+  Região,
+  add_outliers = TRUE
+)
+
+highchart()%>%
+  hc_xAxis(type ="category")%>%
+  hc_add_series_list(myboxplotData_nordeste)%>%
+  hc_xAxis(title = list(text = "Região"))%>%
+        hc_yAxis(title = list(text = "Qnt. de MEIs"))%>%
+        hc_caption(text= "Fonte: Estatística dos Cadastros de Microempreendedores Individuais - IBGE, 2021.")%>% 
+        hc_legend(enabled= FALSE)
+```
+
+## Norte
+
+```{r echo=FALSE}
+myboxplotData_norte <- data_to_boxplot(
+  norte,
+  Valor,
+  Região,
+  add_outliers = TRUE
+)
+
+highchart()%>%
+  hc_xAxis(type ="category")%>%
+  hc_add_series_list(myboxplotData_norte)%>%
+  hc_xAxis(title = list(text = "Região"))%>%
+        hc_yAxis(title = list(text = "Qnt. de MEIs"))%>%
+        hc_caption(text= "Fonte: Estatística dos Cadastros de Microempreendedores Individuais - IBGE, 2021.")%>% 
+        hc_legend(enabled= FALSE)
+```
+
+## Sudeste
+
+```{r echo=FALSE}
+myboxplotData_sudeste <- data_to_boxplot(
+  sudeste,
+  Valor,
+  Região,
+  add_outliers = TRUE
+)
+
+highchart()%>%
+  hc_xAxis(type ="category")%>%
+  hc_add_series_list(myboxplotData_sudeste)%>%
+  hc_xAxis(title = list(text = "Região"))%>%
+        hc_yAxis(title = list(text = "Qnt. de MEIs"))%>%
+        hc_caption(text= "Fonte: Estatística dos Cadastros de Microempreendedores Individuais - IBGE, 2021.")%>% 
+        hc_legend(enabled= FALSE)
+```
+
+## Sul
+
+```{r echo=FALSE}
+
+myboxplotData_sul <- data_to_boxplot(
+  sul,
+  Valor,
+  Região,
+  add_outliers = TRUE
+)
+
+highchart()%>%
+  hc_xAxis(type ="category")%>%
+  hc_add_series_list(myboxplotData_sul)%>%
+  hc_xAxis(title = list(text = "Região"))%>%
+        hc_yAxis(title = list(text = "Qnt. de MEIs"))%>%
+        hc_caption(text= "Fonte: Estatística dos Cadastros de Microempreendedores Individuais - IBGE, 2021.")%>% 
+        hc_legend(enabled= FALSE)
+```
+:::
+
+**Centro-Oeste**:
+
+```{r echo=TRUE}
+summary(centro_oeste$Valor)
+
+(IQR(centro_oeste$Valor))
+```
+
+-   O estado que possui a menor quantidade de MEIs (valor mínimo da amostra) é Mato Grosso do Sul, com 183.592 MEIs.
+
+-   25% dos estados da região Centro-Oeste possuem até 218.612 MEIs (1st Qu.).
+
+-   A mediana indica que metade dos estados da região Centro-Oeste tem até 230 mil MEIs e outra metade tem mais de 230 mil MEIs. A mediana equivale ao 2st Qu.
+
+-   Em média, há 276 mil MEIs por estado da região Centro-Oeste.
+
+-   75% dos estados da região tem até de 288 mil MEIs (3st Qu.).
+
+-   Os dados da região são assimétricos à direita (média maior que a mediana).
+
+-   Não há outliers.
+
+-   IIQ = 70.100.
+
+**Nordeste:**
+
+```{r echo=TRUE}
+summary(nordeste$Valor)
+
+(IQR(nordeste$Valor))
+```
+
+-   O estado que possui a menor quantidade de MEIs (valor mínimo da amostra) é Sergipe, com 89.093 MEIs.
+
+-   25% dos estados da região Nordeste tem até 131.404 MEIs(1st Qu.).
+
+-   A mediana indica que metade dos estados da região tem até 162 mil MEIs e outra metade tem mais de 162 mil MEIs. A mediana equivale ao 2st Qu.
+
+-   Em média, há 260 mil MEIs por estado da região Nordeste.
+
+-   75% dos estados da região tem até 403 mil MEIs (3st Qu.).
+
+-   Os dados da região são assimétricos à direita (média maior que a mediana).
+
+-   Não há outliers.
+
+-   IIQ = 272.380.
+
+**Norte:**
+
+```{r echo=TRUE}
+summary(norte$Valor)
+
+(IQR(norte$Valor))
+```
+
+-   O estado que possui a menor quantidade de MEIs (valor mínimo da amostra) é Roraima, com 26.196 MEIs.
+
+-   25% dos estados da região tem até 23.313 MEIs (1st Qu.).
+
+-   A mediana indica que metade dos estados da região tem até 78 mil MEIs e outra metade tem mais de 78 mil MEIs. A mediana equivale ao 2st Qu.
+
+-   Em média, há 92 mil MEIs por estado da região Norte.
+
+-   75% dos estados da região tem até 107 mil MEIs (3st Qu.).
+
+-   Os dados da região são assimétricos à direita (média maior que a mediana).
+
+-   O estado do Pará é um outlier (287 mil MEIs).
+
+-   IIQ = 83.704.
+
+**Sudeste**:
+
+```{r echo=TRUE}
+summary(sudeste$Valor)
+
+(IQR(sudeste$Valor))
+```
+
+-   O estado que possui a menor quantidade de MEIs (valor mínimo da amostra) é o Espírito Santo, com 335.237 MEIs.
+
+-   25% dos estados da região tem até 1.180.299 MEIs (1st Qu.).
+
+-   A mediana indica que metade dos estados da região tem até 1,4 mi MEIs e outra metade tem mais que 1,4 mi de MEIs. A mediana equivale ao 2st Qu.
+
+-   Em média, há 1,7 milhão MEIs por estado da região Sudeste.
+
+-   75% dos estados da região tem até 2.037.630 MEIs (3st Qu.).
+
+-   O histograma da região é do tipo 'platô', uma vez que as barras tem praticamente o mesmo tamanho. Ocorre porque a frequência de MEIs em cada UF da região é semelhante.
+
+-   Não há outlier.
+
+-   IIQ = 857.331.
+
+**Sul:**
+
+```{r echo=FALSE}
+summary(sul$Valor)
+
+(IQR(sul$Valor))
+```
+
+-   O estado que possui a menor quantidade de MEIs (valor mínimo da amostra) é Santa Catarina, com 568.093 MEIs.
+
+-   25% dos estados brasileiros tem até 683.578 MEIs (1st Qu.).
+
+-   A mediana indica que metade dos estados da região tem até 799.062 MEIs e outra metade tem mais de 799.062 MEIs. A mediana equivale ao 2st Qu.
+
+-   Em média, há 730.986 MEIs por estado da região Sul.
+
+-   75% dos estados da região tem até 812.432 MEIs (3st Qu.).
+
+-   Os dados da região são assimétricos à esquerda (média menor que a mediana).
+
+-   Não há outlier.
+
+-   IIQ = 128.854.
+
+## Considerações
+
+-   A presença de outliers influenciou diretamente o valor da média dos dados do Brasil. Com isso, não é razoável supor que a média de MEIs por estado brasileiro é de 488 mil.
+
+-   Com exceção da região Sul, os dados de todas as regiões são assimétricos à direita (média maior que a mediana).
+
+-   Pelos resultados do IIQ e pela representação visual do boxplot, a maior variabilidade de dados está na região sudeste.

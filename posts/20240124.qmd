@@ -1,0 +1,40 @@
+---
+title: "Análise descritiva de itens em escala Likert"
+author: "Edilene Cavalcanti"
+date: "2024-01-24"
+categories: [Visualização]
+listing: 
+  contents: "20240124.qmd"
+execute: 
+  warning: false
+sidebar: false
+bibliography: bibliography.bib
+---
+
+Tutorial para análise descritiva de itens em escala Likert de cinco pontos, onde 1 = discordo totalmente e 5 = concordo totalmente.
+
+Pacotes necessários:
+
+```{r echo=TRUE}
+if(!require(googlesheets4)){install.packages("googlesheets4")};library(googlesheets4) # para ler planilha do Google
+if(!require(table1)){install.packages("table1")};library(table1) # para tabelas
+if(!require(likert)){install.packages("likert")};library(likert) # para tabelas
+if(!require(RColorBrewer)){install.packages("RColorBrewer")};library(RColorBrewer) # para tabelas
+```
+
+```{r echo=FALSE}
+# Desabilitando a autenticação do Google
+googlesheets4::gs4_deauth()
+
+# importando a amostra
+amostra <- read_sheet(
+  paste0(
+    "https://docs.google.com/spreadsheets/", 
+    "d/1E5mXcouuYBohDp4lrojDhBDCnZQdMgrjgAvkiyhzMHI/edit?usp=sharing"), 
+    sheet = "Porte")
+
+```
+
+```{r echo=FALSE}
+View(amostra)
+```

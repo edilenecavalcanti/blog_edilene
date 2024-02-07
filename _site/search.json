@@ -1,129 +1,10 @@
 [
   {
-    "objectID": "visualizacao.html",
-    "href": "visualizacao.html",
-    "title": "Edilene Cavalcanti",
-    "section": "",
-    "text": "PV1\n\n\n\n\n\n\n\n\n\n\n\n\nDec 5, 2023\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "posts_publications/20231211_PP_4/20231211_PP_4.html",
-    "href": "posts_publications/20231211_PP_4/20231211_PP_4.html",
-    "title": "Carta da Indústria",
-    "section": "",
-    "text": "Demandas do setor industrial para os candidatos ao executivo e legislativo de 2018.\nhttps://cartaindustria.fiesc.com.br/carta-industria.pdf\nI’m not sure if it’s relevant."
-  },
-  {
-    "objectID": "posts_publications/20231211_PP_2/20231211_PP_2.html",
-    "href": "posts_publications/20231211_PP_2/20231211_PP_2.html",
-    "title": "Acate Tech Report 2019 | Santa Catarina Technology Sector",
-    "section": "",
-    "text": "Estudo que apresenta o panorama do setor de tecnologia em Santa Catarina.\nQuantidade de colaboradores, empregos gerados, sócios, produtividade e faturamento.\nAcesse o site https://www.techreportsc.com/ ou leia o estudo completo: Tech Report 2021."
-  },
-  {
-    "objectID": "manipulacao.html",
-    "href": "manipulacao.html",
-    "title": "Edilene Cavalcanti",
-    "section": "",
-    "text": "pm1\n\n\n\n\n\n\n\n\n\n\n\n\nDec 5, 2023\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "extracao.html",
-    "href": "extracao.html",
-    "title": "Edilene Cavalcanti",
-    "section": "",
-    "text": "post extracao 1\n\n\n\n\n\n\n\n\n\n\n\n\nDec 5, 2023\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "anotacoes.html",
-    "href": "anotacoes.html",
-    "title": "Edilene Cavalcanti",
-    "section": "",
-    "text": "Dicas para limpeza e organização de bases de dados\n\n\n\n\n\n\n\n\n\n\n\n\nDec 11, 2023\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "estatistica.html",
-    "href": "estatistica.html",
-    "title": "Edilene Cavalcanti",
-    "section": "",
-    "text": "est1\n\n\n\n\n\n\n\n\n\n\n\n\nDec 5, 2023\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Edilene Cavalcanti",
-    "section": "",
-    "text": "Who Am I? I would also like to know."
-  },
-  {
-    "objectID": "index.html#bio",
-    "href": "index.html#bio",
-    "title": "Edilene Cavalcanti",
-    "section": "",
-    "text": "Who Am I? I would also like to know."
-  },
-  {
-    "objectID": "index.html#education",
-    "href": "index.html#education",
-    "title": "Edilene Cavalcanti",
-    "section": "Education",
-    "text": "Education\nPostgraduate in Data Science and Big Data, 2024 - currently\nPontífica Universidade Católica de Minas Gerais, Minas Gerais, Brazil\nDoctorate in Engineering, Management, and Knowledge Media, 2021 - currently\nFederal University of Santa Catarina, Santa Catarina, Brazil\nMaster’s in Engineering, Management, and Knowledge Media, 2019\nFederal University of Santa Catarina, Santa Catarina, Brazil\nBachelor’s degree in Economics, 2013\nFederal University of Santa Catarina, Santa Catarina, Brazil"
-  },
-  {
-    "objectID": "index.html#experience",
-    "href": "index.html#experience",
-    "title": "Edilene Cavalcanti",
-    "section": "Experience",
-    "text": "Experience\nResearcher (fev-21, (\nServiço Brasileiro de Apoio às Micro e Pequenas Empresas, Santa Catarina, Brazil\n\nWorking…\n\nAnalyst (fev-19 - jan/20)\nFederação das Indústrias de Santa Catarina, Santa Catarina, Brazil\n\nWorking\n\nResearcher (jan/14 - jan/18)\nFederação das Indústrias de Santa Catarina, Santa Catarina, Brazil\n\nWorking…."
-  },
-  {
-    "objectID": "index.html#key-research-interests",
-    "href": "index.html#key-research-interests",
-    "title": "Edilene Cavalcanti",
-    "section": "Key research interests",
-    "text": "Key research interests\n\nMachine learning\nLinguagens de programação: Python e RStudio"
-  },
-  {
-    "objectID": "posts_anotacoes/20231211_PA_1/20231211_PA_1.html",
-    "href": "posts_anotacoes/20231211_PA_1/20231211_PA_1.html",
-    "title": "Dicas para limpeza e organização de bases de dados",
-    "section": "",
-    "text": "Lidando com NAs\nsubset(DF, !is.na(A)) # para não pegar valores NA da coluna A.\nsubset(DF, complete.cases(DF)) # para eliminar todas as linhas com NA."
-  },
-  {
-    "objectID": "posts_publications/20231211_PP_1/20231211_PP_1.html",
-    "href": "posts_publications/20231211_PP_1/20231211_PP_1.html",
-    "title": "Acate Tech Report 2021 | Santa Catarina Technology Sector",
-    "section": "",
-    "text": "Estudo que apresenta o panorama do setor de tecnologia em Santa Catarina.\nQuantidade de colaboradores, empregos gerados, sócios, produtividade e faturamento.\nAcesse o site https://www.techreportsc.com/ ou leia o estudo completo: Tech Report 2021."
-  },
-  {
-    "objectID": "posts_publications/20231211_PP_5/20231211_PP_5.html",
-    "href": "posts_publications/20231211_PP_5/20231211_PP_5.html",
+    "objectID": "posts_estudos/20231211_PP_5/20231211_PP_5.html",
+    "href": "posts_estudos/20231211_PP_5/20231211_PP_5.html",
     "title": "Rotas Estratégicas Setoriais",
     "section": "",
     "text": "Indústria Criativa\nTurismo\nCelulose & Papel\nMeio Ambiente\nAgroalimentar\nBens de Capital\nEnergia\nTêxtil & Confecção\nIndústrias Emergentes\nProdutos Químicos & Plásticos\nConstrução Civil"
-  },
-  {
-    "objectID": "publications.html",
-    "href": "publications.html",
-    "title": "Edilene Cavalcanti",
-    "section": "",
-    "text": "Acate Tech Report 2021 | Santa Catarina Technology Sector\n\n\n\n\n\n\n\n\n\n\n\n\nDec 11, 2023\n\n\n\n\n\n\n  \n\n\n\n\nAcate Tech Report 2019 | Santa Catarina Technology Sector\n\n\n\n\n\n\n\n\n\n\n\n\nDec 11, 2023\n\n\n\n\n\n\n  \n\n\n\n\nSanta Catarina em Dados\n\n\n\n\n\n\n\n\n\n\n\n\nDec 11, 2023\n\n\n\n\n\n\n  \n\n\n\n\nCarta da Indústria\n\n\n\n\n\n\n\n\n\n\n\n\nDec 11, 2023\n\n\n\n\n\n\n  \n\n\n\n\nRotas Estratégicas Setoriais\n\n\n\n\n\n\n\n\n\n\n\n\nDec 11, 2023\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "materiais.html",
-    "href": "materiais.html",
-    "title": "Edilene Cavalcanti",
-    "section": "",
-    "text": "No matching items"
-  },
-  {
-    "objectID": "posts.html",
-    "href": "posts.html",
-    "title": "Edilene Cavalcanti",
-    "section": "",
-    "text": "post 1\n\n\n\n\n\n\n\n\n\n\n\n\nDec 5, 2023\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts_estudos/20231211_PP_1/20231211_PP_1.html",
@@ -133,18 +14,67 @@
     "text": "Estudo que apresenta o panorama do setor de tecnologia em Santa Catarina.\nQuantidade de colaboradores, empregos gerados, sócios, produtividade e faturamento.\nAcesse o site https://www.techreportsc.com/ ou leia o estudo completo: Tech Report 2021."
   },
   {
-    "objectID": "posts_estudos/20231211_PP_5/20231211_PP_5.html",
-    "href": "posts_estudos/20231211_PP_5/20231211_PP_5.html",
-    "title": "Rotas Estratégicas Setoriais",
+    "objectID": "posts/20231219.html",
+    "href": "posts/20231219.html",
+    "title": "Análise exploratória da quantidade de MEIs no Brasil",
     "section": "",
-    "text": "Indústria Criativa\nTurismo\nCelulose & Papel\nMeio Ambiente\nAgroalimentar\nBens de Capital\nEnergia\nTêxtil & Confecção\nIndústrias Emergentes\nProdutos Químicos & Plásticos\nConstrução Civil"
+    "text": "O objetivo deste relatório é analisar as medidas de posição (média, mediana e quartis) dos dados de MEIs no Brasil em 2021.\nPara extração, manipulação e visualização dos dados, utilizaremos os seguintes pacotes:\nif(!require(sidrar)){install.packages(\"sidrar\")};library(sidrar) # extração\nif(!require(dplyr)){install.packages(\"dplyr\")};library(dplyr) # manipulação\nif(!require(highcharter)){install.packages(\"highcharter\")};library(highcharter) # visualização\nif(!require(echarts4r)){install.packages(\"echarts4r\")};library(echarts4r) # visualização\nif(!require(gt)){install.packages(\"gt\")};library(gt) # visualização\nOs dados utilizados são da pesquisa ‘Estatística dos Cadastros de Microempreendedores Individuais - divulgada pelo IBGE (2021). Analisaremos a variável ’número de microempreendedores individuais (MEIs) (Unidades)’, disponível na Tabela 9590.\n# extração da tabela 9590, do IBGE, via sidrar\ndados_mei &lt;- sidrar::get_sidra(\n  api = paste0(\"/t/9590/n3/all/v/8862/p/last%201/c956/59983/\",\n    \"c1719/71430/c1760/60187/c1724/60096/c1726/60099\"\n))\nA quantidade de MEIs no Brasil está distribuída entre as Unidades da Federação (UFs). Podemos observar essa distribuição por meio de um mapa - elaborado a partir do pacote highcharter.\n# download do mapa do Brasil, por UF, via highcharter\nmapa_br &lt;- highcharter::get_data_from_map(\n  download_map_data(\"countries/br/br-all\")\n)\n\ndplyr::glimpse(mapa_br)\n\nRows: 27\nColumns: 20\n$ `hc-group`    &lt;chr&gt; \"admin1\", \"admin1\", \"admin1\", \"admin1\", \"admin1\", \"admin…\n$ `hc-middle-x` &lt;dbl&gt; 0.43, 0.51, 0.39, 0.73, 0.56, 0.61, 0.46, 0.60, 0.51, 0.…\n$ `hc-middle-y` &lt;dbl&gt; 0.34, 0.42, 0.55, 0.33, 0.35, 0.58, 0.47, 0.45, 0.54, 0.…\n$ `hc-key`      &lt;chr&gt; \"br-sp\", \"br-ma\", \"br-pa\", \"br-sc\", \"br-ba\", \"br-ap\", \"b…\n$ `hc-a2`       &lt;chr&gt; \"SP\", \"MA\", \"PA\", \"SC\", \"BA\", \"AP\", \"MS\", \"MG\", \"GO\", \"R…\n$ labelrank     &lt;chr&gt; \"2\", \"2\", \"2\", \"2\", \"2\", \"2\", \"2\", \"2\", \"2\", \"2\", \"2\", \"…\n$ hasc          &lt;chr&gt; \"BR.SP\", \"BR.MA\", \"BR.PA\", \"BR.SC\", \"BR.BA\", \"BR.AP\", \"B…\n$ `woe-id`      &lt;chr&gt; \"2344868\", \"2344854\", \"2344857\", \"2344867\", \"2344848\", \"…\n$ fips          &lt;chr&gt; \"BR32\", \"BR13\", \"BR16\", \"BR26\", \"BR05\", \"BR03\", \"BR11\", …\n$ `postal-code` &lt;chr&gt; \"SP\", \"MA\", \"PA\", \"SC\", \"BA\", \"AP\", \"MS\", \"MG\", \"GO\", \"R…\n$ name          &lt;chr&gt; \"São Paulo\", \"Maranhão\", \"Pará\", \"Santa Catarina\", \"Bahi…\n$ country       &lt;chr&gt; \"Brazil\", \"Brazil\", \"Brazil\", \"Brazil\", \"Brazil\", \"Brazi…\n$ `type-en`     &lt;chr&gt; \"State\", \"State\", \"State\", \"State\", \"State\", \"State\", \"S…\n$ longitude     &lt;chr&gt; \"-48.5206\", \"-45.389\", \"-52.6491\", \"-51.1586\", \"-41.8027…\n$ `woe-name`    &lt;chr&gt; \"São Paulo\", \"Maranhão\", \"Pará\", \"Santa Catarina\", \"Bahi…\n$ latitude      &lt;chr&gt; \"-22.2267\", \"-5.01897\", \"-4.44313\", \"-27.0392\", \"-12.365…\n$ `woe-label`   &lt;chr&gt; \"Sao Paulo, BR, Brazil\", \"Maranhao, BR, Brazil\", \"Para, …\n$ type          &lt;chr&gt; \"Estado\", \"Estado\", \"Estado\", \"Estado\", \"Estado\", \"Estad…\n$ `alt-name`    &lt;chr&gt; NA, \"São Luíz de Maranhão\", NA, \"Santa Catharina\", \"Ba¡a…\n$ subregion     &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …\nPara construir o mapa, é necessário unir a base de dados com a camada do mapa a partir de uma variável em comum entre ambas - que é o nome da UF. Observe que, na camada do mapa (mapa_br), o nome da UF é representada pela variável “name”.\n# união da base de dados e da camada do mapa. \nmeis_uf_br &lt;- dplyr::left_join(\n  x = mapa_br, \n  y = dados_mei, \n  by = c(\"name\" = \"Unidade da Federação\")\n)\nConstruindo o mapa:\nhcmap(\"countries/br/br-all\", data = meis_uf_br, value = \"Valor\",\n      joinBy = c(\"hc-a2\", \"postal-code\"), name= \"Quantidade\",\n      dataLabels = list(enabled = TRUE, format = '{point.code}'),\n      tooltip = list(valueDecimals = 0)) %&gt;%\n  hc_title(text = \"Quantidade de MEIs por UF em 2021\") %&gt;%\n  hc_colorAxis(dataClasses = color_classes(c(seq(20000, 4000000, by = 600000)))) %&gt;% \n  hc_legend(layout = \"vertical\", align = \"left\", valueDecimals = 0)\n\n\n\n\n\nFigure 1: Mapa\nAo observar o mapa, nota-se que os MEIs concentram-se principalmente nas regiões sudeste e sul, com destaque para São Paulo, que lidera como o estado brasileiro com o maior número de MEIs."
+  },
+  {
+    "objectID": "posts/20231219.html#análise-exploratória-dos-dados",
+    "href": "posts/20231219.html#análise-exploratória-dos-dados",
+    "title": "Análise exploratória da quantidade de MEIs no Brasil",
+    "section": "Análise exploratória dos dados",
+    "text": "Análise exploratória dos dados\nPara essa etapa, serão calculadas as medidas de posição: média, mediana e quartis.\nDe acordo com a pesquisa, o total de MEIs no Brasil, em 2021, era de 13.194.470.\n\nsum(dados_mei$Valor)\n\n[1] 13194470\n\n\nO histograma mostra que treze UFs possuem até 200 mil MEIs e que somente uma UF tem entre 3,4 e 3,6 milhões de MEIs.\n\n\n\n\n\n\nFigure 2: Histograma da Quantidade de MEIs no Brasil em 2021\n\n\n\nPelas medidas de posição e pelo cálculo do intervalo interquartil (IIQ = Q3 - Q1), apresentados abaixo, temos que:\n\nsummary(dados_mei$Valor)\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n  21196  116638  230285  488684  514408 3586574 \n\n(IQR(dados_mei$Valor))\n\n[1] 397771\n\n\n\nO estado que possui a menor quantidade de MEIs (valor mínimo da amostra) é Roraima, com 21.196 MEIs.\n25% dos estados brasileiros possuem até 116.638 MEIs (1st Qu.).\nA mediana indica que metade dos estados brasileiros possuem até 230 mil e outra metade possui mais de 230 mil. A mediana equivale ao 2st Qu.\nEm média, há 488 mil MEIs por estado brasileiro.\n75% estados brasileiros possuem até 514 mil MEIs (3st Qu.).\nO estado que possui a maior quantidade de MEIs (valor máximo da amostra) é São Paulo, com 3.586.574 MEIs.\nIIQ = 397.771.\n\nO boxplot da quantidade de MEIs representa essas medidas e indica que os dados são assimétricos à direita (ou dados com assimetria positiva - em que a média é maior que a mediana).\nOu seja, a maioria das UFs tem menos MEIs, mas algumas UFs se destacam com uma quantidade consideravelmente maior. Essa situação também pode ser observada pelo histograma (Figura 2).\n\n\n\n\n\nFigure 3: Boxplot da quantidade de MEIs no Brasil em 2021\n\n\n\nAlém disso, o boxplot destaca a presença de três valores extremos (outliers), representados pelos estados de São Paulo (3,5 mi), do Rio de Janeiro (1,5 mi) e de Minas Gerais (1,5 mi).\nEsses outliers influenciam consideravemente a média da quantidade de MEIs no Brasil, que é de 488 mil. Portanto, a média dos dados não se configura como uma medida confiável de posição - neste caso, uma vez que valores extremamente altos estão distorcendo significativamente a média.\nA mediana surge, então, como uma alternativa mais indicada. A mediana é menos sensível a valores extremos, já que se baseia no valor central quando os dados estão ordenados e desconsidera as distorções causadas pelos outliers presentes na distribuição.\nComo alternativa para analisar o comportamento dos dados, vamos considerar a distribuição da quantidade de MEIs entre as cinco regiões do Brasil (Centro-Oeste, Nordeste, Norte, Sudeste e Sul).\n\nMEIs nas regiões brasileiras\nA região sudeste concentra pouco mais da metade (52,3%) da quantidade de MEIs no país - apesar de possuir apenas quatro estados. Os três outliers presentes nos dados estão nessa região (São Paulo, Rio de Janeiro e Minas Gerais).\n\n\n\n\n\n\n  \n    \n      Frequências e porcentagens da quantidade de MEIs no Brasil por região\n    \n    \n    \n      Região\n      Qnt. de MEIs\n      Porcentagem\n    \n  \n  \n    Sudeste\n6905112\n52.3\n    Nordeste\n2343135\n17.8\n    Sul\n2192957\n16.6\n    Centro-Oeste\n1105976\n8.4\n    Norte\n647290\n4.9\n    Total\n13194470\n100.0\n  \n  \n    \n      Fonte: Estatísticas dos Cadastros de Empreendedores Individuais - IBGE, 2021.\n    \n  \n  \n\n\n\n\nA seguir, apresentamos os histogramas e os boxplots das cinco regiões.\n\nCentro-OesteNordesteNorteSudesteSul\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTodas as regiõesCentro-OesteNordesteNorteSudesteSul\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCentro-Oeste:\n\nsummary(centro_oeste$Valor)\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n 183592  218612  230830  276494  288712  460724 \n\n(IQR(centro_oeste$Valor))\n\n[1] 70100.5\n\n\n\nO estado que possui a menor quantidade de MEIs (valor mínimo da amostra) é Mato Grosso do Sul, com 183.592 MEIs.\n25% dos estados da região Centro-Oeste possuem até 218.612 MEIs (1st Qu.).\nA mediana indica que metade dos estados da região Centro-Oeste tem até 230 mil MEIs e outra metade tem mais de 230 mil MEIs. A mediana equivale ao 2st Qu.\nEm média, há 276 mil MEIs por estado da região Centro-Oeste.\n75% dos estados da região tem até de 288 mil MEIs (3st Qu.).\nOs dados da região são assimétricos à direita (média maior que a mediana).\nNão há outliers.\nIIQ = 70.100.\n\nNordeste:\n\nsummary(nordeste$Valor)\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n  89093  131404  162258  260348  403784  704907 \n\n(IQR(nordeste$Valor))\n\n[1] 272380\n\n\n\nO estado que possui a menor quantidade de MEIs (valor mínimo da amostra) é Sergipe, com 89.093 MEIs.\n25% dos estados da região Nordeste tem até 131.404 MEIs(1st Qu.).\nA mediana indica que metade dos estados da região tem até 162 mil MEIs e outra metade tem mais de 162 mil MEIs. A mediana equivale ao 2st Qu.\nEm média, há 260 mil MEIs por estado da região Nordeste.\n75% dos estados da região tem até 403 mil MEIs (3st Qu.).\nOs dados da região são assimétricos à direita (média maior que a mediana).\nNão há outliers.\nIIQ = 272.380.\n\nNorte:\n\nsummary(norte$Valor)\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n  21196   23313   78214   92470  107017  287222 \n\n(IQR(norte$Valor))\n\n[1] 83704\n\n\n\nO estado que possui a menor quantidade de MEIs (valor mínimo da amostra) é Roraima, com 26.196 MEIs.\n25% dos estados da região tem até 23.313 MEIs (1st Qu.).\nA mediana indica que metade dos estados da região tem até 78 mil MEIs e outra metade tem mais de 78 mil MEIs. A mediana equivale ao 2st Qu.\nEm média, há 92 mil MEIs por estado da região Norte.\n75% dos estados da região tem até 107 mil MEIs (3st Qu.).\nOs dados da região são assimétricos à direita (média maior que a mediana).\nO estado do Pará é um outlier (287 mil MEIs).\nIIQ = 83.704.\n\nSudeste:\n\nsummary(sudeste$Valor)\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n 335237 1180299 1491650 1726278 2037630 3586574 \n\n(IQR(sudeste$Valor))\n\n[1] 857331\n\n\n\nO estado que possui a menor quantidade de MEIs (valor mínimo da amostra) é o Espírito Santo, com 335.237 MEIs.\n25% dos estados da região tem até 1.180.299 MEIs (1st Qu.).\nA mediana indica que metade dos estados da região tem até 1,4 mi MEIs e outra metade tem mais que 1,4 mi de MEIs. A mediana equivale ao 2st Qu.\nEm média, há 1,7 milhão MEIs por estado da região Sudeste.\n75% dos estados da região tem até 2.037.630 MEIs (3st Qu.).\nO histograma da região é do tipo ‘platô’, uma vez que as barras tem praticamente o mesmo tamanho. Ocorre porque a frequência de MEIs em cada UF da região é semelhante.\nNão há outlier.\nIIQ = 857.331.\n\nSul:\n\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n 568093  683578  799062  730986  812432  825802 \n\n\n[1] 128854.5\n\n\n\nO estado que possui a menor quantidade de MEIs (valor mínimo da amostra) é Santa Catarina, com 568.093 MEIs.\n25% dos estados brasileiros tem até 683.578 MEIs (1st Qu.).\nA mediana indica que metade dos estados da região tem até 799.062 MEIs e outra metade tem mais de 799.062 MEIs. A mediana equivale ao 2st Qu.\nEm média, há 730.986 MEIs por estado da região Sul.\n75% dos estados da região tem até 812.432 MEIs (3st Qu.).\nOs dados da região são assimétricos à esquerda (média menor que a mediana).\nNão há outlier.\nIIQ = 128.854."
+  },
+  {
+    "objectID": "posts/20231219.html#considerações",
+    "href": "posts/20231219.html#considerações",
+    "title": "Análise exploratória da quantidade de MEIs no Brasil",
+    "section": "Considerações",
+    "text": "Considerações\n\nA presença de outliers influenciou diretamente o valor da média dos dados do Brasil. Com isso, não é razoável supor que a média de MEIs por estado brasileiro é de 488 mil.\nCom exceção da região Sul, os dados de todas as regiões são assimétricos à direita (média maior que a mediana).\nPelos resultados do IIQ e pela representação visual do boxplot, a maior variabilidade de dados está na região sudeste."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Edilene Cavalcanti",
+    "section": "",
+    "text": "Sou bacharel em Ciências Econômicas e trabalho com a extração, manipulação, visualização e análise de dados. Minha trajetória profissional começou na Federação das Indústrias de Santa Catarina (FIESC) - onde atuei como pesquisadora na área de economia entre 2014 e 2018, contribuindo para a execução do Programa de Desenvolvimento da Indústria Catarinense (PDIC 2022). Em 2019 - na mesma instituição, passei a ocupar o cargo de Analista de Inteligência Industrial, participando da construção do Observatório da Indústria Catarinense. De 2022 a 2024, participei da execução de dois projetos no âmbito do Observatório de Negócios do Serviço Brasileiro de Apoio às Micro e Pequenas Empresas de Santa Catarina (SEBRAE/SC). Atualmente sou sócia e pesquisadora na Caravela Dados e Estatísticas. Além disso, tenho Mestrado em Engenharia e Gestão do Conhecimento (pela UFSC) e estou finalizando o Doutorado na mesma área e instituição."
+  },
+  {
+    "objectID": "index.html#bio",
+    "href": "index.html#bio",
+    "title": "Edilene Cavalcanti",
+    "section": "",
+    "text": "Me chamo Edilene e me formei em Economia em 2013. Desde então, trabalho nos processos de extração, manipulação, carregamento, visualização e análise de dados.\nUtilizo as ferramentas RStudio, Python, SQL, Power BI e Qlik Sense nesses processos para trabalhar com diversas fontes de dados disponíveis no Brasil: Banco Central do Brasil (BACEN), Cadastro Geral de Empregados e Desempregados (CAGED), Comércio Exterior (COMEX STAT - MDIC), Instituto Brasileiro de Geografia e Estatística (IBGE) e Relação Anual de Informações Sociais (RAIS)."
+  },
+  {
+    "objectID": "index.html#formação",
+    "href": "index.html#formação",
+    "title": "Edilene Cavalcanti",
+    "section": "Formação",
+    "text": "Formação\nCiência de Dados e Big Data, 2024 - atual\nPontífica Universidade Católica de Minas Gerais, Minas Gerais, Brasil\nEspecialização em Ciência de Dados para Economia e Finanças, 2023 - atual\nAnálise Macro, Rio de Janeiro, Brasil\nDoutorado em Engenharia, Mídia e Gestão do Conhecimento, 2021 - atual\nUniversidade Federal de Santa Catarina, Santa Catarina, Brasil\nMestrado em Engenharia e Gestão do Conhecimento, 2019\nUniversidade Federal de Santa Catarina, Santa Catarina, Brasil\nBacharelado em Economia, 2013\nUniversidade Federal de Santa Catarina, Santa Catarina, Brasil"
+  },
+  {
+    "objectID": "index.html#áreas-de-interesse",
+    "href": "index.html#áreas-de-interesse",
+    "title": "Edilene Cavalcanti",
+    "section": "Áreas de interesse",
+    "text": "Áreas de interesse\n\nCiência e análise de dados\nMachine learning\nLinguagens de programação: Python e R Studio\nEstatística"
   },
   {
     "objectID": "estudos.html",
     "href": "estudos.html",
     "title": "Edilene Cavalcanti",
     "section": "",
-    "text": "Acate Tech Report 2021 | Santa Catarina Technology Sector\n\n\n\n\n\n\n\n\n\n\n\n\nDec 11, 2023\n\n\n\n\n\n\n  \n\n\n\n\nAcate Tech Report 2019 | Santa Catarina Technology Sector\n\n\n\n\n\n\n\n\n\n\n\n\nDec 11, 2023\n\n\n\n\n\n\n  \n\n\n\n\nSanta Catarina em Dados\n\n\n\n\n\n\n\n\n\n\n\n\nDec 11, 2023\n\n\n\n\n\n\n  \n\n\n\n\nCarta da Indústria\n\n\n\n\n\n\n\n\n\n\n\n\nDec 11, 2023\n\n\n\n\n\n\n  \n\n\n\n\nRotas Estratégicas Setoriais\n\n\n\n\n\n\n\n\n\n\n\n\nDec 11, 2023\n\n\n\n\n\n\nNo matching items"
+    "text": "Acate Tech Report 2021 | Santa Catarina Technology Sector\n\n\n\n\n\n\n\n\n\nDec 11, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAcate Tech Report 2019 | Santa Catarina Technology Sector\n\n\n\n\n\n\n\n\n\nDec 11, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSanta Catarina em Dados\n\n\n\n\n\n\n\n\n\nDec 11, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCarta da Indústria\n\n\n\n\n\n\n\n\n\nDec 11, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRotas Estratégicas Setoriais\n\n\n\n\n\n\n\n\n\nDec 11, 2023\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts.html",
+    "href": "posts.html",
+    "title": "Edilene Cavalcanti",
+    "section": "",
+    "text": "Análise descritiva de itens em escala Likert\n\n\n\nVisualização\n\n\n\n\n\n\n\nEdilene Cavalcanti\n\n\nJan 24, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nGráficos usando o Highcharter\n\n\n\nVisualização\n\n\n\n\n\n\n\nEdilene Cavalcanti\n\n\nJan 23, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nAnálise exploratória da quantidade de MEIs no Brasil\n\n\n\nEstatística\n\n\n\n\n\n\n\nEdilene Cavalcanti\n\n\nDec 19, 2023\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts_estudos/20231211_PP_2/20231211_PP_2.html",
@@ -159,5 +89,26 @@
     "title": "Carta da Indústria",
     "section": "",
     "text": "Demandas do setor industrial para os candidatos ao executivo e legislativo de 2018.\nhttps://cartaindustria.fiesc.com.br/carta-industria.pdf\nI’m not sure if it’s relevant."
+  },
+  {
+    "objectID": "index.html#oi-edilene-cavalcanti-aqui",
+    "href": "index.html#oi-edilene-cavalcanti-aqui",
+    "title": "Edilene Cavalcanti",
+    "section": "",
+    "text": "Sou bacharel em Ciências Econômicas e trabalho com a extração, manipulação, visualização e análise de dados. Minha trajetória profissional teve início na Federação das Indústrias de Santa Catarina (FIESC) - onde atuei como pesquisadora na área de economia entre 2014 e 2018, contribuindo para a execução do Programa de Desenvolvimento da Indústria Catarinense (PDIC 2022). Em 2019 - na mesma instituição, passei a ocupar o cargo de Analista de Inteligência Industrial, participando da construção do Observatório da Indústria Catarinense. De 2022 a 2024, participei da execução de dois projetos no âmbito do Observatório de Negócios do Serviço Brasileiro de Apoio às Micro e Pequenas Empresas de Santa Catarina\n(SEBRAE/SC). Atualmente sou sócia e pesquisadora na Caravela Dados e Estatísticas. Além disso, tenho Mestrado em Engenharia e Gestão do Conhecimento (pela UFSC) e estou finalizando o Doutorado na mesma área e instituição"
+  },
+  {
+    "objectID": "posts/20240123.html",
+    "href": "posts/20240123.html",
+    "title": "Gráficos usando o Highcharter",
+    "section": "",
+    "text": "Tutorial de como criar gráficos interativos utilizando o pacote highcharter. Utilizaremos como base a tabela 2722 - obtida na pesquisa Demografia das Empresas e Estatísticas de Empreendedorismo - uma pesquisa do IBGE, e obtidos por meio do pacote sidrar.\nPacotes necessários:\n\nlibrary(highcharter)\nlibrary(sidrar)\nlibrary(tidyverse)\n\nImportando a variável ‘número de unidades locais (unidades)’:\n\nempresas &lt;- sidrar::get_sidra(\n  x = 2722,\n  period = c(\"2015\", \"2016\", \"2017\", \"2018\", \"2019\", \"2020\", \"2021\"),\n  variable = 706,\n  geo = \"State\",\n  geo.filter = list(State = \"42\")\n)\n\nEtapa para limpeza da base:\n\n# excluindo a linha 'total' e as linhas com 'NA'\nempresas_limpo &lt;- empresas |&gt; \n  dplyr::filter(`Classificação Nacional de Atividades Econômicas (CNAE 2.0)` != \"Total\") |&gt; \n  na.omit()\n\nGráfico de colunas:\n\ndados_resumo &lt;- aggregate(Valor ~ Ano, data = empresas_limpo, sum)\n\n# Crie o gráfico de barras empilhadas usando highcharter\nhighchart() %&gt;%\n  hc_chart(type = \"column\") %&gt;%\n  hc_title(text = \"&lt;b&gt;Unidades Locais&lt;b&gt;\", align = \"left\") %&gt;%\n  hc_subtitle(text = \"Santa Catarina\", align = \"left\") %&gt;%\n  hc_xAxis(categories = dados_resumo$Ano, showEmpty = FALSE) %&gt;%\n  hc_yAxis(\n    title = list(text = \"\"),\n    gridLineWidth = 0  # Remover linhas de grade do eixo y\n  ) %&gt;%\n  hc_add_series(\n    name = \"Unidades Locais\",\n    data = dados_resumo$Valor,\n    color = 'purple',\n    dataLabels = list(\n      enabled = TRUE,\n      format = '{point.y:,.0f}'\n    )\n  )|&gt; \n  hc_legend(enabled= FALSE) |&gt; \n  hc_caption(text= \"Fonte: Elaboração própria a partir dos dados do IBGE.\", align = \"right\")\n\n\n\n\n\n\nGráfico de linhas\n\ndados_resumo &lt;- aggregate(Valor ~ Ano, data = empresas_limpo, sum)\n\n# Crie o gráfico de barras empilhadas usando highcharter\nhighchart() %&gt;%\n  hc_chart(type = \"line\") %&gt;%\n  hc_title(text = \"&lt;b&gt;Unidades Locais&lt;b&gt;\", align = \"left\") %&gt;%\n  hc_subtitle(text = \"Santa Catarina\", align = \"left\") %&gt;%\n  hc_xAxis(categories = dados_resumo$Ano, showEmpty = FALSE) %&gt;%\n  hc_yAxis(\n    title = list(text = \"\"),\n    gridLineWidth = 0  # Remover linhas de grade do eixo y\n  ) %&gt;%\n  hc_add_series(\n    name = \"Unidades Locais\",\n    data = dados_resumo$Valor,\n    color = 'darkgreen',\n    dataLabels = list(\n      enabled = TRUE,\n      format = '{point.y:,.0f}'\n    )\n  )|&gt; \n  hc_legend(enabled= FALSE) |&gt; \n  hc_caption(text= \"Fonte: Elaboração própria a partir dos dados do IBGE\", align = \"right\")\n\n\n\n\n\n\nExemplo de gráfico de linhas com categorias:\n\ntibble &lt;- tibble::tibble(\n  Ano = c(2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024),\n  `Santa Catarina` = c(75, 82, 52, 8, 17, 9, 57, 80, 81, 66),\n  `Minas Gerais` = c(84, 86, 20, 55, 62, 18, 32, 98, 34, 34),\n  `Paraíba` = c(74, 46, 74, 98, 100, 4, 21, 75, 70, 72)\n)\n\n\nhighchart() %&gt;%\n  hc_chart(type = \"line\") %&gt;%\n  hc_title(text = \"Exemplo de gráfico com categorias\", align = \"left\") %&gt;%\n  hc_subtitle(\n    text = 'By Job Category. Fonte: &lt;a href=\"https://irecusa.org/programs/solar-jobs-census/\" target=\"_blank\"&gt;IREC&lt;/a&gt;.',\n    align = 'left'\n  ) %&gt;%\n  hc_yAxis(title = list(text = 'Pessoas Ocupadas')) %&gt;%\n  hc_xAxis(\n    categories = tibble$Ano,\n    accessibility = list(rangeDescription = 'Range: 2015 to 2024')\n  ) %&gt;%\n  hc_legend(\n    layout = 'vertical',\n    align = 'right',\n    verticalAlign = 'middle'\n  ) %&gt;%\n  hc_plotOptions(\n    series = list(\n      label = list(connectorAllowed = FALSE),\n      pointStart = 2015\n    )\n  ) %&gt;%\n  hc_series(\n    list(\n      name = 'Santa Catarina',\n      data = tibble$`Santa Catarina`\n    ),\n    list(\n      name = 'Minas Gerais',\n      data = tibble$`Minas Gerais`\n    ),\n    list(\n      name = 'Paraíba',\n      data = tibble$`Paraíba`\n    )\n  ) %&gt;%\n  hc_responsive(\n    list(\n      condition = list(maxWidth = 500),\n      chartOptions = list(\n        legend = list(\n          layout = 'horizontal',\n          align = 'center',\n          verticalAlign = 'bottom'\n        )\n      )\n    )\n  )\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/20240124.html",
+    "href": "posts/20240124.html",
+    "title": "Análise descritiva de itens em escala Likert",
+    "section": "",
+    "text": "Tutorial para análise descritiva de itens em escala Likert de cinco pontos, onde 1 = discordo totalmente e 5 = concordo totalmente.\nPacotes necessários:\n\nif(!require(googlesheets4)){install.packages(\"googlesheets4\")};library(googlesheets4) # para ler planilha do Google\nif(!require(table1)){install.packages(\"table1\")};library(table1) # para tabelas\nif(!require(likert)){install.packages(\"likert\")};library(likert) # para tabelas\nif(!require(RColorBrewer)){install.packages(\"RColorBrewer\")};library(RColorBrewer) # para tabelas\n\n\n\n\n\n\n\n\n\n\nNo matching items"
   }
 ]

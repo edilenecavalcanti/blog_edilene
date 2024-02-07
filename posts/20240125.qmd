@@ -1,0 +1,195 @@
+---
+title: "PIB de Santa Catarina em 2021"
+draft: true
+description: "análise descritiva dos dados"
+date: "2024-01-25"
+categories: [Análise]
+listing: 
+  contents: "20240125.qmd"
+  type: grid
+execute: 
+  warning: false
+sidebar: false
+bibliography: bibliography.bib
+---
+
+## 
+
+O produto interno bruto (PIB) é o total dos bens e serviços produzidos pelas unidades produtoras residentes destinados ao consumo final sendo, portanto, equivalente à soma dos valores adicionados pelas diversas atividades econômicas acrescida dos impostos, líquidos de subsídios, sobre produtos. O PIB também é equivalente à soma dos consumos finais de bens e serviços valorados a preço de mercado sendo, também, equivalente à soma das rendas primárias.
+
+O PIB de Santa Catarina alcançou R\$ 428 bilhões em 2021, representando 4,8% do PIB do Brasil (R\$ 9 trilhões). Em comparação com 2020 - quando era de R\$ 349 bi, o PIB do estado continua sendo o sexto maior do país.
+
+A região sudeste e os demais estados da região sul concentra a maior parcela do PIB brasileiro.
+
+```{r echo=FALSE}
+# pacotes necessários
+if(!require(sidrar)){install.packages("sidrar")};library(sidrar) # extração
+if(!require(dplyr)){install.packages("dplyr")};library(dplyr) # manipulação
+if(!require(highcharter)){install.packages("highcharter")};library(highcharter) # visualização
+if(!require(echarts4r)){install.packages("echarts4r")};library(echarts4r) # visualização
+if(!require(gt)){install.packages("gt")};library(gt) # visualização
+```
+
+```{r echo=FALSE}
+# pib por UF em 2021
+pib_uf <- sidrar::get_sidra(
+  api = "/t/5938/n3/all/v/37/p/last%201/d/v37%200"
+)
+```
+
+```{r echo=FALSE}
+# download do mapa do Brasil, por UF, via highcharter
+mapa_br <- highcharter::get_data_from_map(
+  download_map_data("countries/br/br-all")
+)
+```
+
+```{r echo=FALSE}
+# união da base de dados e da camada do mapa. 
+mapa <- dplyr::left_join(
+  x = mapa_br, 
+  y = pib_uf, 
+  by = c("name" = "Unidade da Federação")
+)
+```
+
+::: panel-tabset
+## Distribuição do PIB por UF
+
+```{r echo=FALSE}
+nota_rodape <- "Nota: em mil reais."
+
+hcmap("countries/br/br-all", data = mapa, value = "Valor",
+      joinBy = c("hc-a2", "postal-code"), name= "PIB",
+      dataLabels = list(enabled = TRUE, format = '{point.code}'),
+      tooltip = list(valueDecimals = 0)) %>%
+  hc_colorAxis(dataClasses = color_classes(c(seq(17000000, 3000000000, by = 320000000)))) %>% 
+  hc_legend(layout = "vertical", align = "left", valueDecimals = 0) |> 
+   hc_caption(
+   text = "Fonte: Elaborado a partir dos dados do IBGE. " %>%
+      paste(nota_rodape, sep = " "),
+    align = "right"
+  ) |> 
+  hc_exporting(
+    enabled = TRUE,
+    buttons = list(
+      contextButton = list(
+        text = "Exportar",
+        align = "right",
+        theme = list(
+          fill = 'none',
+          stroke = 'none',
+          style = list(
+            color = 'white',
+            fontSize = '12px'
+          )
+        )
+      )
+    ),
+    fallbackToExportServer = FALSE
+  )
+
+```
+
+## Ranking por UF
+
+```{r echo=FALSE}
+# Crie o gráfico de barras  usando highcharter
+
+pib_uf <- pib_uf %>%
+  arrange(desc(Valor))
+
+highchart() %>%
+  hc_chart(type = "bar") %>%
+  hc_xAxis(categories = pib_uf$`Unidade da Federação`, showEmpty = FALSE) %>%
+  hc_yAxis(
+    title = list(text = ""),
+    gridLineWidth = 0, 
+    labels = list(enabled = FALSE) # Remover linhas de grade do eixo y
+  ) %>%
+  hc_add_series(
+    name = "Unidades Locais",
+    data = pib_uf$Valor,
+    color = 'purple',
+    dataLabels = list(
+      enabled = TRUE,
+      format = '{point.y:,.0f}'
+    ), 
+    pointPadding = 0.05,  # Ajuste o espaçamento entre as barras
+    groupPadding = 0.08 
+  ) %>%
+  hc_legend(enabled = FALSE) %>%
+  hc_caption(
+   text = "Fonte: Elaborado a partir dos dados do IBGE. " %>%
+      paste(nota_rodape, sep = " "),
+    align = "right"
+  ) |> 
+  hc_exporting(
+    enabled = TRUE,
+    buttons = list(
+      contextButton = list(
+        text = "Exportar",
+        align = "right",
+        theme = list(
+          fill = 'none',
+          stroke = 'none',
+          style = list(
+            color = 'white',
+            fontSize = '12px'
+          )
+        )
+      )
+    ),
+    fallbackToExportServer = FALSE
+  )
+
+```
+:::
+
+Série histórica do PIB
+
+```{r echo=FALSE}
+pib_sc_2002_2021 <- sidrar::get_sidra(
+  x = 5938,
+  period = c("2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021"),
+  variable = 37,
+  geo = "State",
+  geo.filter = list(State = "42")
+)
+
+```
+
+```{r echo=FALSE}
+highchart() %>%
+  hc_chart(type = "line") %>%
+  hc_title(text = "Produto Interno Bruto a preços correntes)", align = "left") %>%
+  hc_subtitle(text = "(mil reais)", align = "left") %>%
+  hc_xAxis(categories = pib_sc_2002_2021$Ano, showEmpty = FALSE) %>%
+  hc_yAxis(
+    title = list(text = ""),
+    gridLineWidth = 0  # Remover linhas de grade do eixo y
+  ) %>%
+  hc_add_series(
+    name = "PIB",
+    data = pib_sc_2002_2021$Valor,
+    color = 'darkgreen',
+    dataLabels = list(
+      enabled = TRUE,
+      format = '{point.y:,.0f}'
+    )
+  )|> 
+  hc_legend(enabled= FALSE) |> 
+  hc_caption(text= "Fonte: Elaboração própria a partir dos dados do IBGE", align = "right")
+```
+
+```{r echo=FALSE}
+pib_mun_sc_2020_2021 <- sidrar::get_sidra(
+  x = 5938,
+  period = c("2020", "2021"),
+  variable = 37,
+  geo = "City",
+  geo.filter = list(State = "42")
+)
+
+pib_mun_sc_2020_2021$`Município (Código)` <- as.numeric(pib_mun_sc_2020_2021$`Município (Código)`)
+```

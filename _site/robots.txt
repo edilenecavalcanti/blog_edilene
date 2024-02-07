@@ -1,1 +1,1 @@
-Sitemap: https://edilene.quarto.pub/edilene-cavalcanti/sitemap.xml
+Sitemap: https://edilene.quarto.pub/site/sitemap.xml
